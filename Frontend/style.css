@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: sans-serif;
+    background: #111;
+    color: white;
+  }
+
+  header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 1rem;
+  }
+
+  header button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  header button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .viewer-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  spline-viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .content {
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
