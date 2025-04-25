@@ -3,19 +3,19 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
-    require: true,
+    required: true,
   },
   password: {
     type: String,
-    require: true,
+    required: true,
   },
   name: {
     type: String,
-    requir: true,
+    required: true,
   },
   role: {
     type: String,
-    require: true,
+    required: true,
     enum: ["Client", "Admin"],
   },
   perfume: [

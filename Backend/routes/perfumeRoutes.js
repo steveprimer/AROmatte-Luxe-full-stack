@@ -14,7 +14,7 @@ const router = express.Router();
 router.post("/createPerfume", auth, isAdmin, createPerfume);
 
 //show api...........
-router.get("/showPerfume", showPerfume);
+router.get("/showPerfume", auth, showPerfume);
 
 // delete api...........
 

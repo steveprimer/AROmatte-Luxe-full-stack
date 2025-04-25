@@ -117,10 +117,21 @@ const showPerfume = async (req, res) => {
       });
     }
 
+    const isAdmin = req.user?.role === "Admin";
+
+    const perfumeData = response.map((item) => ({
+      _id: item._id,
+      name: item.name,
+      price: item.price,
+      description: item.description,
+      image: item.image,
+      showAdminControls: isAdmin,
+    }));
+
     res.status(200).json({
       success: true,
       message: "perfume fetched successfully",
-      response,
+      response: perfumeData,
     });
   } catch (err) {
     return res.status(500).json({
