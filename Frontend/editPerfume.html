@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfume Edit Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #121212;
+        color: #f3e8ff;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #c084fc;
+        margin-bottom: 30px;
+      }
+
+      a {
+        display: block;
+        width: fit-content;
+        margin: 0 auto 30px auto;
+        text-decoration: none;
+      }
+
+      .PageButton {
+        background-color: #7c3aed;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(124, 58, 237, 0.4);
+      }
+
+      .PageButton:hover {
+        background-color: #6d28d9;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(124, 58, 237, 0.6);
+      }
+
+      form {
+        background-color: #1e1b2e;
+        padding: 40px;
+        border-radius: 16px;
+        max-width: 650px;
+        margin: auto;
+        box-shadow: 0 6px 16px rgba(128, 90, 213, 0.4);
+      }
+
+      table {
+        width: 100%;
+        border-spacing: 20px;
+      }
+
+      label {
+        font-size: 16px;
+        color: #d8b4fe;
+        font-weight: 500;
+      }
+
+      input[type="text"],
+      input[type="file"] {
+        width: 100%;
+        padding: 12px 14px;
+        background-color: #2a2438;
+        border: 1px solid #a78bfa;
+        color: #e9d5ff;
+        border-radius: 8px;
+        outline: none;
+        font-size: 15px;
+      }
+
+      input:disabled {
+        background-color: #3a3042;
+        color: #a78bfa;
+        cursor: not-allowed;
+      }
+
+      button {
+        background-color: #a855f7;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 17px;
+        width: 100%;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+      }
+
+      button:hover {
+        background-color: #9333ea;
+        transform: scale(1.02);
+        box-shadow: 0 6px 18px rgba(147, 51, 234, 0.5);
+      }
+
+      @media (max-width: 600px) {
+        form {
+          padding: 20px;
+        }
+
+        table {
+          border-spacing: 14px;
+        }
+
+        .PageButton {
+          font-size: 18px;
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Perfume Edit Page</h1>
+
+    <a href="./collections.html"
+      ><h1 class="PageButton">Go Collections Page</h1></a
+    >
+
+    <form onsubmit="EditHandler(event)">
+      <table>
+        <tr>
+          <td><label>Select Image:</label></td>
+          <td><input type="file" name="image" disabled /></td>
+        </tr>
+        <tr>
+          <td><label>Email:</label></td>
+          <td><input type="text" name="email" disabled /></td>
+        </tr>
+        <tr>
+          <td><label>Name:</label></td>
+          <td><input type="text" name="name" required /></td>
+        </tr>
+        <tr>
+          <td><label>Price:</label></td>
+          <td><input type="text" name="price" /></td>
+        </tr>
+        <tr>
+          <td><label>Description:</label></td>
+          <td><input type="text" name="description" /></td>
+        </tr>
+        <tr>
+          <td><label>Stock:</label></td>
+          <td><input type="text" name="stock" /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button id="sumbitBtn">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script src="./script.js"></script>
+    <script>
+      const form = document.querySelector("form");
+      const token = localStorage.getItem("token");
+      const perfumeId = localStorage.getItem("editPerfumeId");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        const response = await fetch(
+          `http://localhost:4000/api/v1/updatePerfume/${perfumeId}`,
+          {
+            method: "PUT",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            body: formData,
+          }
+        );
+
+        const result = await response.json();
+
+        if (result.success) {
+          alert("Perfume updated successfully!");
+          localStorage.removeItem("editPerfumeId");
+          window.location.href = "collections.html";
+        } else {
+          alert(result.message || "Update failed.");
+        }
+      });
+    </script>
+  </body>
+</html>

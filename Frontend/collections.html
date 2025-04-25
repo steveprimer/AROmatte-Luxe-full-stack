@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./style2.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>AROmatte</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="navButton"> Home </a>
+        <a href="#about" class="navButton">About Us</a>
+        <a href="cart.html" class="navButton">View Cart</a>
+      </nav>
+      <input type="text" id="searchInput" placeholder="Search perfumes..." />
+    </header>
+
+    <div class="container">
+      <h1 id="perfumeHeading">Welcome to AROmatte</h1>
+      <a href="./perfumeCreate.html" id="createButton">
+        <h1>Create Perfume</h1>
+      </a>
+      <div
+        id="loadingContainer"
+        style="text-align: center; margin-bottom: 30px"
+      >
+        <div class="spinner"></div>
+        <p style="margin-top: 10px">Loading perfumes...</p>
+      </div>
+
+      <!-- Swiper -->
+
+      <div class="swiper mySwiper">
+        <div class="overlay-text">
+          <h1>Welcome to AROmatte Luxe</h1>
+          <p>Where Elegance Meets Essence.</p>
+
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="AD.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="AE.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="AF.jpg" />
+          </div>
+          
+          <div class="swiper-slide">
+            <img src="AI.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="AJ.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="AK.jpg" />
+          </div>
+          
+          <div class="swiper-slide">
+            <img src="AN.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="AO.jpg" />
+          </div>
+          
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div id="wrapper">
+        <p id="emptyState" style="display: none; margin-top: 30px">
+          No perfumes found. Login and create your first perfume!
+        </p>
+      </div>
+    </div>
+    <section id="about">
+      <h2>About AROmatte Luxe</h2>
+      <p class="about-text">
+        <strong>AROmatte Luxe</strong> is a premium, student-built perfume brand dedicated to redefining elegance and individuality through fragrance. Crafted with passion and precision, every bottle is a story — a statement of who you are. Created by <strong>Anson Stephan</strong>, AROmatte Luxe blends luxury with youth-driven creativity.
+      </p>
+      <div class="info-cards">
+        <div class="card">
+          <h3>🌟 Vision</h3>
+          <p>
+            To become a signature scent for every personality — empowering youth to express themselves boldly and authentically.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🎯 Mission</h3>
+          <p>
+            Deliver exceptional fragrances that combine quality, style, and accessibility for the modern generation.
+          </p>
+        </div>
+        <div class="card">
+          <h3>💡 Values</h3>
+          <p>
+            Creativity, individuality, and sustainable luxury — we believe in beauty that empowers and endures.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/eventpro"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/eventpro"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://twitter.com/eventpro"><i class="bx bxl-twitter"></i></a>
+      </div>
+      <p class="contact-text">
+        Or reach out to our creator directly:<br />
+        <strong>Steve Primer</strong> – Tech & Design •
+        <a href="mailto:ansonstephan@gmail.com">ansonstephan@gmail.com</a>
+      </p>
+    </section>
+    
+
+    <script src="./script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+  </body>
+</html>
