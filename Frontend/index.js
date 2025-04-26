@@ -51,10 +51,10 @@ if (signupForm) {
   signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = signupForm.querySelector('input[type="text"]').value;
-    const email = signupForm.querySelector('input[type="email"]').value;
-    const password = signupForm.querySelector('input[type="password"]').value;
-    const role = "Admin"; // or change dynamically later
+    const name = signupForm.querySelector('input[name="name"]').value;
+    const email = signupForm.querySelector('input[name="email"]').value;
+    const password = signupForm.querySelector('input[name="password"]').value;
+    const role = signupForm.querySelector("#role").value; // Get role dynamically
 
     try {
       const res = await fetch(
