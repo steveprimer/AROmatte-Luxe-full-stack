@@ -36,6 +36,10 @@ connectDB();
 const cloudinaryConfig = require("./database/cloudinary");
 cloudinaryConfig();
 
+app.get("/", (req, res) => {
+  res.send("Welcome to AROmatte Luxe!");
+});
+
 app.listen(port, () => {
   console.log("server is connected successfully");
 });
