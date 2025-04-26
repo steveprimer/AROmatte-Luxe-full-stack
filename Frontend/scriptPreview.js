@@ -1,7 +1,10 @@
-const createPerfumeAPI = "http://localhost:4000/api/v1/createPerfume";
-const showPerfumeAPI = "http://localhost:4000/api/v1/showPerfume";
-const deletePerfumeAPI = "http://localhost:4000/api/v1/deletePerfume";
-const updatePerfumeAPI = "http://localhost:4000/api/v1/updatePerfume";
+const createPerfumeAPI =
+  "https://aromatte-luxe.onrender.com/api/v1/createPerfume";
+const showPerfumeAPI = "https://aromatte-luxe.onrender.com/api/v1/showPerfume";
+const deletePerfumeAPI =
+  "https://aromatte-luxe.onrender.com/api/v1/deletePerfume";
+const updatePerfumeAPI =
+  "https://aromatte-luxe.onrender.com/api/v1/updatePerfume";
 
 const wrapper = document.querySelector("#wrapper");
 

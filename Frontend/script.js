@@ -1,7 +1,10 @@
-const createPerfumeAPI = "http://localhost:4000/api/v1/createPerfume";
-const showPerfumeAPI = "http://localhost:4000/api/v1/showPerfume";
-const deletePerfumeAPI = "http://localhost:4000/api/v1/deletePerfume";
-const updatePerfumeAPI = "http://localhost:4000/api/v1/updatePerfume";
+const createPerfumeAPI =
+  "https://aromatte-luxe.onrender.com/api/v1/createPerfume";
+const showPerfumeAPI = "https://aromatte-luxe.onrender.com/api/v1/showPerfume";
+const deletePerfumeAPI =
+  "https://aromatte-luxe.onrender.com/api/v1/deletePerfume";
+const updatePerfumeAPI =
+  "https://aromatte-luxe.onrender.com/api/v1/updatePerfume";
 
 const wrapper = document.querySelector("#wrapper");
 
@@ -137,7 +140,7 @@ function createPerfumeCard(data) {
         if (!confirmed) return;
 
         const res = await fetch(
-          `http://localhost:4000/api/v1/deletePerfume/${element._id}`,
+          `https://aromatte-luxe.onrender.com/api/v1/deletePerfume/${element._id}`,
           {
             method: "DELETE",
             headers: {
@@ -221,48 +224,3 @@ document.getElementById("searchInput").addEventListener("input", function (e) {
     perfume.classList.toggle("hidden", !match);
   });
 });
-
-// function createPerfumeCard(data) {
-//   const wrapper = document.querySelector("#wrapper");
-//   wrapper.innerHTML = "";
-
-// data.forEach((item) => {
-//   const perfume = document.createElement("div");
-//   perfume.className = "perfume";
-
-// Image
-// const img = document.createElement("img");
-// img.className = "perfumeImage";
-// img.src = item.image;
-// img.alt = item.name;
-
-// Zoom on hover effect is handled in CSS (see below)
-
-// Name
-// const name = document.createElement("h2");
-// name.className = "name";
-// name.textContent = item.name;
-
-// Price
-// const price = document.createElement("h4");
-// price.className = "price";
-// price.textContent = "₹" + item.price;
-
-// Add to Cart button
-// const cartBtn = document.createElement("button");
-// cartBtn.className = "addToCartButton";
-// cartBtn.textContent = "Add to Cart";
-
-// Wrap buttons in div (if needed for layout)
-// const btnGroup = document.createElement("div");
-// btnGroup.className = "btn";
-// btnGroup.appendChild(cartBtn);
-
-// perfume.appendChild(img);
-// perfume.appendChild(name);
-// perfume.appendChild(price);
-// perfume.appendChild(btnGroup);
-
-// wrapper.appendChild(perfume);
-//   });
-// }

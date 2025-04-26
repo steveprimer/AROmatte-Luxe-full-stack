@@ -18,13 +18,16 @@ if (loginForm) {
     const password = loginForm.querySelector('input[type="password"]').value;
 
     try {
-      const res = await fetch("http://localhost:4000/api/v1/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        "https://aromatte-luxe.onrender.com/api/v1/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const data = await res.json();
 
@@ -54,13 +57,16 @@ if (signupForm) {
     const role = "Admin"; // or change dynamically later
 
     try {
-      const res = await fetch("http://localhost:4000/api/v1/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, password, role }),
-      });
+      const res = await fetch(
+        "https://aromatte-luxe.onrender.com/api/v1/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, password, role }),
+        }
+      );
 
       const data = await res.json();
 
