@@ -9,7 +9,6 @@ loginlink.addEventListener("click", () => {
   loginsec.classList.remove("active");
 });
 
-// === Login Handler ===
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", async (e) => {
@@ -18,25 +17,28 @@ if (loginForm) {
     const password = loginForm.querySelector('input[type="password"]').value;
 
     try {
-      const res = await fetch(
-        "https://aromatte-luxe.onrender.com/api/v1/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
-        }
-      );
+      const res = await fetch("http://localhost:4000/api/v1/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
       const data = await res.json();
+      console.log("Login Response:", data); // Log the response to check
 
+      // In the login code (index.js)
       if (data.success) {
         localStorage.setItem("token", data.token);
-        // alert("Login successful!");
-        window.location.href = "index.html"; // redirect to homepage
-      } else {
-        alert(data.message);
+        localStorage.setItem("user", JSON.stringify(data.user)); // <-- simple and correct!
+
+        if (data.user.role === "Admin") {
+          window.location.href = "index.html";
+          alert("Logged in as admin.");
+        } else {
+          window.location.href = "index.html";
+        }
       }
     } catch (err) {
       console.log(err);
@@ -71,8 +73,8 @@ if (signupForm) {
       const data = await res.json();
 
       if (data.success) {
-        // alert("Signup successful! You can now login.");
         loginsec.classList.remove("active"); // switch to login view
+        alert("Signup successful! You can now login.");
       } else {
         alert(data.message);
       }
