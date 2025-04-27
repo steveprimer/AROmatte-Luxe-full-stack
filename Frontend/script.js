@@ -61,10 +61,14 @@ const showPerfume = async () => {
     } else {
       emptyState.style.display = "none";
       createPerfumeCard(data.response);
+    }
 
-      if (data.response[0].showAdminControls) {
-        createBtn.style.display = "inline-block";
-      }
+    // ✅ Always check user after that
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log("User from localStorage:", user);
+    if (user && user.role === "Admin") {
+      console.log("Admin user detected");
+      createBtn.style.display = "inline-block";
     }
   } catch (err) {
     console.log(err);
