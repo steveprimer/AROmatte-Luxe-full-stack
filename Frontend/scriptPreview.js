@@ -67,7 +67,7 @@ const showPerfume = async (limit = 0) => {
     }
   } catch (err) {
     console.log(err);
-    emptyState.textContent = "Failed to load perfumes.";
+    emptyState.textContent = "Login to view perfumes.";
     emptyState.style.display = "block";
   }
 };
