@@ -20,7 +20,9 @@ header {
   display: flex;
   gap: 1rem;
 }
-
+.side-panel{
+  display: none;
+}
 header button {
   padding: 10px 20px;
   border: none;
