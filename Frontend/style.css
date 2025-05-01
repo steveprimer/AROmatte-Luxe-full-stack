@@ -657,7 +657,7 @@ spline-viewer {
     width: 220px;
     height: 100%;
     /* background-color: #1a1a1a; */
-    background: rgba(9, 1, 1, 0.3);
+    background: rgba(9, 1, 1, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding-top: 80px;
