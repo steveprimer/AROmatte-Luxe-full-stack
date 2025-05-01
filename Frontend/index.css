@@ -232,6 +232,8 @@ body{
   
     .text-item p {
       font-size: 16px;
+      background-color: #00000058;
+      backdrop-filter: blur(10px);
     }
   
     .social-icon a i {
@@ -312,6 +314,7 @@ body{
     .item {
         padding: 30px 15px;
         margin-top: 25rem;
+        border-radius: 10px;
     }
 
     .text-item h2 {
@@ -319,7 +322,9 @@ body{
     }
 
     .text-item p {
+        padding: 10px 0;
         font-size: 15px;
+        background-color: #00000058;
         backdrop-filter: blur(10px);
     }
 
