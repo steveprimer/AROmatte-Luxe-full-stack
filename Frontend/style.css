@@ -49,6 +49,13 @@ spline-viewer {
   display: block;
 }
 
+.main-image{
+  display: none;
+}
+
+.welcomwe {
+  display: none;
+}
 .content {
   padding: 1rem;
   /* max-width: 800px; */
@@ -698,6 +705,24 @@ spline-viewer {
     left: 0;
   }
   
+  .viewer-container > spline-viewer {
+    display: none;
+  }
+
+  .main-image {
+
+    background: cover no-repeat center center;
+    display: block; 
+    width: 100%;
+    height: 30rem;
+  }
+  .welcome{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+    color: #C9A86A; /* Gold */
+    text-align: center;
+    margin-top: 20px;
+  }
   .info-cards > .card {
 
     display: flex;
