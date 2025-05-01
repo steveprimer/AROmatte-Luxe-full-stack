@@ -222,3 +222,7 @@ document.getElementById("searchInput").addEventListener("input", function (e) {
     perfume.classList.toggle("hidden", !match);
   });
 });
+
+function toggleMenu() {
+  document.querySelector(".navbar").classList.toggle("open");
+}

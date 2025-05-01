@@ -16,11 +16,34 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
     <title>AROmatte</title>
   </head>
   <body>
     <header>
+
+
+      <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Side Menu Panel -->
+    <nav class="side-panel" id="sidePanel">
+      <a href="login.html">Login</a>
+      <a href="index.html">Home</a>
+      <a href="cart.html">View Cart</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+
+
       <nav class="navbar">
         <a href="index.html" class="navButton"> Home </a>
         <a href="#about" class="navButton">About Us</a>
@@ -119,9 +142,9 @@
     <section id="contact">
       <h2>Contact Us</h2>
       <div class="social-icons">
-        <a href="https://www.instagram.com/eventpro"><i class="bx bxl-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/eventpro"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://twitter.com/eventpro"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.instagram.com/_steve_primer"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/anson-stephan-71132525b/"><i class="bx bxl-linkedin"></i></a>
+        <a href='https://twitter.com/@anson_stephan'><i class="bx bxl-twitter"></i></a>
       </div>
       <p class="contact-text">
         Or reach out to our creator directly:<br />
@@ -155,6 +178,12 @@
           disableOnInteraction: false,
         },
       });
+    </script>
+    <script>
+      function toggleMenu() {
+        const sidePanel = document.getElementById("sidePanel");
+        sidePanel.classList.toggle("open");
+      }
     </script>
   </body>
 </html>

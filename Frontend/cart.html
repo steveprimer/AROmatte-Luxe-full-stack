@@ -8,6 +8,14 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
@@ -26,19 +34,7 @@
         align-items: center;
       }
 
-      nav {
-        /* width: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(12px);
-        padding: 1rem 2rem;
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        border-bottom: 1px solid rgba(255 , 255, 255, 0.1); */
-
+      .navbar {
         width: 100%;
         padding: 2rem 3rem;
         background: rgba(255, 255, 255, 0.05);
@@ -70,7 +66,7 @@
         transform: scale(1.05);
       }
 
-      nav a {
+      .navbar a {
         color: #c9a86a;
         text-decoration: none;
         font-weight: 600;
@@ -78,7 +74,7 @@
         transition: color 0.3s ease;
       }
 
-      nav a:hover {
+      .navbar a:hover {
         color: #ffffff;
       }
 
@@ -273,11 +269,163 @@
         color: #d4af37;
         text-decoration: none;
       }
+
+      @media (max-width: 480px) {
+        /* Base Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+        }
+
+        body {
+          background-color: #0e0e0e;
+          color: #fff;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+          width: 30px;
+          cursor: pointer;
+          z-index: 1001;
+          position: fixed;
+          background-color: #0e0e0e;
+          top: 20px;
+          left: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 20px;
+        }
+
+        .hamburger span {
+          display: block;
+          height: 3px;
+
+          background: #d4af37; /* gold */
+
+          border-radius: 2px;
+          transition: all 0.3s ease;
+        }
+
+        /* Side Panel */
+        .side-panel {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 220px;
+          height: 100%;
+          /* background-color: #1a1a1a; */
+          background: rgba(26, 26, 26, 0.2);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          padding-top: 80px;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          padding-left: 30px;
+          box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+          transition: left 0.3s ease;
+          z-index: 1000;
+        }
+
+        .side-panel a {
+          color: #d4af37;
+          text-decoration: none;
+          font-size: 16px;
+          position: relative;
+          transition: color 0.3s ease;
+        }
+
+        .side-panel a::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0%;
+          height: 2px;
+          background: #d4af37;
+          transition: width 0.3s ease;
+        }
+
+        .side-panel a:hover::after {
+          width: 100%;
+        }
+
+        /* Active class for menu open */
+        .side-panel.open {
+          left: 0;
+        }
+
+        .navbar {
+          display: none;
+        }
+        .info-cards > .card {
+          display: flex;
+          align-items: center;
+          text-align: left;
+          gap: 0.6rem;
+          width: 100%;
+          padding: 1rem;
+          margin: 0 auto;
+          box-sizing: border-box;
+        }
+
+        .about-text {
+          max-width: 100%;
+          margin: 0 auto;
+          font-size: 0.8rem;
+          line-height: 1.5;
+          color: #d0c7b7; /* Soft warm text */
+        }
+
+        .about-text h2 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        #about h2 {
+          font-size: 1.5rem;
+        }
+
+        #contact {
+          /* height: 20rem; */
+          padding: 40px 20px;
+          margin-top: 20px;
+        }
+
+        .contact-text {
+          font-size: 0.8rem;
+          margin-top: 1rem;
+        }
+        .contact-text a {
+          font-size: 0.8rem;
+        }
+        .social-icons a i {
+          font-size: 1.5rem;
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Side Menu Panel -->
+    <nav class="side-panel" id="sidePanel">
+      <a href="login.html">Login</a>
+      <a href="index.html">Home</a>
+      <a href="collections.html">Collections</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
     <!-- Navigation -->
-    <nav>
+    <nav class="navbar">
       <a href="index.html" class="nav-item">Home</a>
       <a href="#about" class="nav-item">About Us</a>
       <a href="#contact" class="nav-item">Contact Us</a>
@@ -324,13 +472,13 @@
     <section id="contact">
       <h2>Contact Us</h2>
       <div class="social-icons">
-        <a href="https://www.instagram.com/eventpro"
+        <a href="https://www.instagram.com/_steve_primer"
           ><i class="bx bxl-instagram"></i
         ></a>
-        <a href="https://www.linkedin.com/company/eventpro"
+        <a href="https://www.linkedin.com/company/anson-stephan-71132525b"
           ><i class="bx bxl-linkedin"></i
         ></a>
-        <a href="https://twitter.com/eventpro"
+        <a href="https://twitter.com/@anson_stephan"
           ><i class="bx bxl-twitter"></i
         ></a>
       </div>
@@ -397,6 +545,12 @@
 
         const rzp = new Razorpay(options);
         rzp.open();
+      }
+    </script>
+    <script>
+      function toggleMenu() {
+        const sidePanel = document.getElementById("sidePanel");
+        sidePanel.classList.toggle("open");
       }
     </script>
   </body>

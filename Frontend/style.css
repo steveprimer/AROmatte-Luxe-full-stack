@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -567,4 +568,199 @@ spline-viewer {
 .contact-text a {
   color: #d4af37;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar .nav-left, .navbar .nav-right {
+    margin: 0;
+    gap: 1rem;
+  }
+
+  .navbar .nav-center {
+    margin-top: 1rem;
+  }
+
+  #wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .perfumeImage {
+    height: 200px;
+  }
+}
+@media (max-width: 480px) {
+
+
+   /* Base Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0e0e0e;
+    color: #fff;
+  }
+
+  .navbar > .nav-left, .navbar > .nav-right {
+    display: none;
+  }
+  .navbar > .nav-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  /* Hamburger Icon */
+  .hamburger {
+    width: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    position: fixed;
+    /* background-color: #0E0E0E; */
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+   
+    background: #d4af37; /* gold */
+    
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  
+  /* Side Panel */
+  .side-panel {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 220px;
+    height: 100%;
+    /* background-color: #1a1a1a; */
+    background: rgba(9, 1, 1, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-left: 30px;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-panel a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .side-panel a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #d4af37;
+    transition: width 0.3s ease;
+  }
+
+  .side-panel a:hover::after {
+    width: 100%;
+  }
+
+  /* Active class for menu open */
+  .side-panel.open {
+    left: 0;
+  }
+  
+  .info-cards > .card {
+
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .about-text {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #d0c7b7; /* Soft warm text */
+  }
+
+  .about-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #about h2 {
+    font-size: 1.5rem;
+  }
+
+  #contact{
+    /* height: 20rem; */
+    padding: 40px 20px;
+    margin-top: 20px;
+  }
+
+  .contact-text {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  } 
+  .contact-text a {
+    font-size: 0.8rem;
+  }
+  .social-icons a i {
+    font-size: 1.5rem;
+  }
+/* 
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .navbar .nav-left, .navbar .nav-right {
+    gap: 0.5rem;
+  }
+
+  .navbar .nav-center {
+    font-size: 0.9rem;
+  } */
+
+  /* #wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 0 5px;
+  }
+
+  .perfumeImage {
+    height: 150px;
+  } */
 }

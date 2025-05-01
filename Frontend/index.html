@@ -9,12 +9,31 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <script
       type="module"
       src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"
     ></script>
   </head>
   <body>
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Side Menu Panel -->
+    <nav class="side-panel" id="sidePanel">
+      <a href="login.html">Login</a>
+      <a href="collections.html">Collections</a>
+      <a href="cart.html">View Cart</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
     <nav class="navbar">
       <div class="nav-left">
         <a href="index.html" class="nav-item">Home</a>
@@ -165,13 +184,13 @@
     <section id="contact">
       <h2>Contact Us</h2>
       <div class="social-icons">
-        <a href="https://www.instagram.com/eventpro"
+        <a href="https://www.instagram.com/_steve_primer"
           ><i class="bx bxl-instagram"></i
         ></a>
-        <a href="https://www.linkedin.com/company/eventpro"
+        <a href="https://www.linkedin.com/in/anson-stephan-71132525b/"
           ><i class="bx bxl-linkedin"></i
         ></a>
-        <a href="https://twitter.com/eventpro"
+        <a href="https://twitter.com/@anson_stephan"
           ><i class="bx bxl-twitter"></i
         ></a>
       </div>
@@ -181,12 +200,12 @@
         <a href="mailto:ansonstephan@gmail.com">ansonstephan@gmail.com</a>
       </p>
     </section>
+    <script src="scriptPreview.js"></script>
     <script>
       function toggleMenu() {
-        const menu = document.getElementById("sideMenu");
-        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        const sidePanel = document.getElementById("sidePanel");
+        sidePanel.classList.toggle("open");
       }
     </script>
-    <script src="scriptPreview.js"></script>
   </body>
 </html>
