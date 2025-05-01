@@ -320,6 +320,7 @@ body{
 
     .text-item p {
         font-size: 15px;
+        backdrop-filter: blur(10px);
     }
 
     .login-section .form-box {
