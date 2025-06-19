@@ -49,11 +49,13 @@ const showPerfume = async () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     const token = localStorage.getItem("token");
+
+    const headers = token ? { Authorization: `Bearer ${token}` } : {}; // don't send header if not logged in
+
     const response = await fetch(showPerfumeAPI, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      headers,
     });
+
     const data = await response.json();
 
     if (data.response.length === 0) {
