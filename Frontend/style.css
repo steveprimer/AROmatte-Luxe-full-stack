@@ -337,6 +337,12 @@ spline-viewer {
 
 }
 
+.mobile-image{
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -768,26 +774,18 @@ spline-viewer {
   .social-icons a i {
     font-size: 1.5rem;
   }
-/* 
-  .navbar {
-    padding: 0.5rem;
-  }
 
-  .navbar .nav-left, .navbar .nav-right {
-    gap: 0.5rem;
-  }
+  .hero-image{
+    display: none;
+  margin-top: 5rem;
+  width: 100%;
 
-  .navbar .nav-center {
-    font-size: 0.9rem;
-  } */
+}
 
-  /* #wrapper {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
-    padding: 0 5px;
-  }
+.mobile-image{
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-  .perfumeImage {
-    height: 150px;
-  } */
 }
