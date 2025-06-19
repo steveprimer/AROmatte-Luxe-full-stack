@@ -6,6 +6,8 @@ const {
   updatePerfume,
 } = require("../controller/perfumeLogic");
 const { signup, login } = require("../controller/userLogics");
+
+const { optionalAuth } = require("../middleware/optionalAuth");
 const { auth, isAdmin } = require("../middleware/auth");
 
 const router = express.Router();
@@ -14,7 +16,7 @@ const router = express.Router();
 router.post("/createPerfume", auth, isAdmin, createPerfume);
 
 //show api...........
-router.get("/showPerfume", auth, showPerfume);
+router.get("/showPerfume", optionalAuth, showPerfume);
 
 // delete api...........
 
