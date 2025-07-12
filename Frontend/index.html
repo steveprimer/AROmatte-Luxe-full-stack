@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AROmatte Luxe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Side Menu Panel -->
+    <nav class="side-panel" id="sidePanel">
+      <a href="login.html">Login</a>
+      <a href="collections.html">Collections</a>
+      <a href="cart.html">View Cart</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="nav-item">Home</a>
+        <div class="nav-item dropdown">
+          Perfumes
+          <div class="dropdown-menu">
+            <a href="collections.html">Men's</a>
+            <a href="collections.html">Women's</a>
+            <a href="collections.html">Unisex</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-center">
+        <input type="text" placeholder="Search perfumes..." id="searchInput" />
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-item dropdown">
+          <span>👤</span>
+          <div class="dropdown-menu">
+            <a href="login.html">Login</a>
+            <a href="profile.html">My Profile</a>
+          </div>
+        </div>
+        <a href="cart.html" class="nav-item">🛒</a>
+      </div>
+    </nav>
+
+    <div class="viewer-container">
+      <spline-viewer
+        url="https://prod.spline.design/xEFiHTRHZsuPcOSc/scene.splinecode"
+      ></spline-viewer>
+      <img src="main-image.jpg" alt="main image" class="main-image" />
+      <div class="welcome">
+        <h1>Welcome to AROmatte Luxe</h1>
+        <p>Your destination for luxury fragrances.</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <p>BESTSELLERS</p>
+    </div>
+    <div id="wrapper">
+      <p id="emptyState" style="display: none; margin-top: 30px">
+        No perfumes found. Login to see perfumes!
+      </p>
+    </div>
+    <div class="momo">
+      <p class="view-all">
+        <a href="collections.html">VIEW ALL</a>
+      </p>
+    </div>
+    <section id="hero">
+      <div class="hero-content">
+        <img src="HERO.jpg" alt="hero image" class="hero-image" />
+        <img src="img_for_mobile.jpg" alt="hero image" class="mobile-image" />
+      </div>
+    </section>
+    <section class="luxury-categories">
+      <h2>Luxury Categories</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="LA.jpg" alt="Luxury Perfumes" />
+          <h3>Luxury Perfumes</h3>
+        </div>
+        <div class="card">
+          <img src="LB.jpg" alt="Body Washes" />
+          <h3>Body Washes</h3>
+        </div>
+        <div class="card">
+          <img src="LC.jpg" alt="Body Lotions" />
+          <h3>Body Lotions</h3>
+        </div>
+        <!-- <div class="card">
+          <img src="images/deos.jpg" alt="Body Deos" />
+          <h3>Body Deos</h3>
+        </div> -->
+        <div class="card">
+          <img src="LD.jpg" alt="Gift Sets" />
+          <h3>Gift Sets</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay"></div>
+      <!-- Dark overlay -->
+      <div class="hero-content2">
+        <h1>AROmatte Luxe</h1>
+        <p>Luxury Fragrances for Every Mood</p>
+      </div>
+    </section>
+    <section class="why-aromatte">
+      <h2>Why AROmatte?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <img src="IA.png" alt="Cruelty Free" />
+          <h3>Cruelty Free</h3>
+        </div>
+        <div class="why-card">
+          <img src="IB.png" alt="Fragrance Forward" />
+          <h3>Fragrance Forward</h3>
+        </div>
+        <div class="why-card">
+          <img src="IC.png" alt="Affordable Luxury" />
+          <h3>Affordable Luxury</h3>
+        </div>
+        <div class="why-card">
+          <img src="ID.png" alt="Gender Neutral" />
+          <h3>Gender Neutral</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About AROmatte Luxe</h2>
+      <p class="about-text">
+        <strong>AROmatte Luxe</strong> is a premium, student-built perfume brand
+        dedicated to redefining elegance and individuality through fragrance.
+        Crafted with passion and precision, every bottle is a story — a
+        statement of who you are. Created by <strong>Anson Stephan</strong>,
+        AROmatte Luxe blends luxury with youth-driven creativity.
+      </p>
+      <div class="info-cards">
+        <div class="card">
+          <h3>🌟 Vision</h3>
+          <p>
+            To become a signature scent for every personality — empowering youth
+            to express themselves boldly and authentically.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🎯 Mission</h3>
+          <p>
+            Deliver exceptional fragrances that combine quality, style, and
+            accessibility for the modern generation.
+          </p>
+        </div>
+        <div class="card">
+          <h3>💡 Values</h3>
+          <p>
+            Creativity, individuality, and sustainable luxury — we believe in
+            beauty that empowers and endures.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/_steve_primer"
+          ><i class="bx bxl-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/anson-stephan-71132525b/"
+          ><i class="bx bxl-linkedin"></i
+        ></a>
+        <a href="https://twitter.com/@anson_stephan"
+          ><i class="bx bxl-twitter"></i
+        ></a>
+      </div>
+      <p class="contact-text">
+        Or reach out to our creator directly:<br />
+        <strong>Steve Primer</strong> – Tech & Design •
+        <a href="mailto:ansonstephan@gmail.com">ansonstephan@gmail.com</a>
+      </p>
+    </section>
+    <script src="scriptPreview.js"></script>
+    <script>
+      function toggleMenu() {
+        const sidePanel = document.getElementById("sidePanel");
+        sidePanel.classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>

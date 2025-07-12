@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfume Registration Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #121212;
+        color: #f3e8ff;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #c084fc;
+        margin-bottom: 30px;
+      }
+
+      a {
+        display: block;
+        width: fit-content;
+        margin: 0 auto 30px auto;
+        text-decoration: none;
+      }
+
+      .PageButton {
+        background-color: #7c3aed;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 18px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        text-align: center;
+      }
+
+      .PageButton:hover {
+        background-color: #6d28d9;
+        transform: translateY(-2px);
+      }
+
+      form {
+        background-color: #1e1b2e;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(128, 90, 213, 0.3);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 20px;
+      }
+
+      td {
+        vertical-align: top;
+      }
+
+      label {
+        display: block;
+        font-size: 16px;
+        color: #d8b4fe;
+        margin-bottom: 6px;
+      }
+
+      input[type="text"],
+      input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #2a2438;
+        border: 1px solid #7c3aed;
+        color: #e9d5ff;
+        border-radius: 6px;
+        outline: none;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="file"]:focus {
+        background-color: #3b2f53;
+        border-color: #c084fc;
+      }
+
+      button {
+        background-color: #a855f7;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+        background-color: #9333ea;
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 600px) {
+        form {
+          padding: 20px;
+        }
+
+        table {
+          border-spacing: 0 16px;
+        }
+
+        td {
+          display: block;
+          width: 100%;
+        }
+
+        button {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Perfume Registration Page</h1>
+    <a href="./collections.html">
+      <h1 class="PageButton">Go Collections Page</h1>
+    </a>
+
+    <form onsubmit="createPerfumeHandler(event)" id="createForm">
+      <table>
+        <tr>
+          <td>
+            <label for="image">Select Image:</label>
+            <input type="file" name="image" id="image" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="price">Price:</label>
+            <input type="text" name="price" id="price" required />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" required />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="stock">Stock:</label>
+            <input type="text" name="stock" id="stock" required />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="submitBtn" type="submit">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
